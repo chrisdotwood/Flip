@@ -18,6 +18,7 @@ namespace Flip.DomainModel {
 			var user1 = new ApplicationUser {
 				UserName = "test1@user.com",
 				Email = "test1@user.com",
+				SecurityStamp = Guid.NewGuid().ToString(),
 				PasswordHash = hasher.HashPassword("Password@123")
 			};
 

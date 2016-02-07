@@ -13,7 +13,6 @@ using Owin;
 using Flip.ViewModels;
 
 namespace Flip.Controllers {
-	[Authorize]
 	public class MeController : ApiController {
 		private ApplicationUserManager _userManager;
 
