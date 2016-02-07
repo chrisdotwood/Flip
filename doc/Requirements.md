@@ -24,8 +24,12 @@
 #### Reviewing Reading Log
 - Browse list of all of the books that have been read
 - Include cover page and description that have been looked up automatically
-- Sortable and filterable (Author/title/date/media/status)
+- Sortable and filterable (author/title/date/media/status)
 - Delete entries that are incorrect (with log of those deleted just in case)
+- Share list with others
+  - Search for other users
+  - Whole list can be public or private
+  - Facility to hide individual entries from public view
 
 #### Admin Tasks
 - Backup/restore log
