@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using FlipBookLog.Models;
+using Flip.ViewModels;
 
-namespace FlipBookLog.Controllers {
+namespace Flip.Controllers {
 	[Authorize]
 	public class ManageController : Controller {
 		private ApplicationSignInManager _signInManager;

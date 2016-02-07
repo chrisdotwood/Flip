@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace FlipBookLog.ViewModels {
+namespace Flip.ViewModels {
 	public class IndexViewModel {
 		public bool HasPassword { get; set; }
 		public IList<UserLoginInfo> Logins { get; set; }

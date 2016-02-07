@@ -1,6 +1,6 @@
 using System;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	public class ParameterAnnotation {
 		public Attribute AnnotationAttribute { get; set; }
 

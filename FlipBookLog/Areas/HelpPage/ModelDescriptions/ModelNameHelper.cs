@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	internal static class ModelNameHelper {
 		// Modify this to provide custom model name mapping.
 		public static string GetModelName(Type type) {

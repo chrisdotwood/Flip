@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using FlipBookLog.Models;
-using FlipBookLog.Providers;
+using Flip.Providers;
+using Flip.DomainModel;
 
-namespace FlipBookLog {
+namespace Flip {
 	public partial class Startup {
 		// Enable the application to use OAuthAuthorization. You can then secure your Web APIs
 		static Startup() {

@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using FlipBookLog.Models;
+using Flip.DomainModel;
 
-namespace FlipBookLog {
+namespace Flip {
 	public class EmailService : IIdentityMessageService {
 		public Task SendAsync(IdentityMessage message) {
 			// Plug in your email service here to send an email.

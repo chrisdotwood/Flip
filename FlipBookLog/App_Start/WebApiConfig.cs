@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
-namespace FlipBookLog {
+namespace Flip {
 	public static class WebApiConfig {
 		public static void Register(HttpConfiguration config) {
 			// Web API configuration and services

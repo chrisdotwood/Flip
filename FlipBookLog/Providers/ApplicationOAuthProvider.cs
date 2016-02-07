@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Owin.Security.OAuth;
 
-namespace FlipBookLog.Providers {
+namespace Flip.Providers {
 	public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider {
 		private readonly string _publicClientId;
 

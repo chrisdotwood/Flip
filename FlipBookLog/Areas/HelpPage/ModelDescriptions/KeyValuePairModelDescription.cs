@@ -1,4 +1,4 @@
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	public class KeyValuePairModelDescription : ModelDescription {
 		public ModelDescription KeyModelDescription { get; set; }
 

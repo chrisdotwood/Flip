@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using FlipBookLog.Areas.HelpPage.ModelDescriptions;
+using Flip.Areas.HelpPage.ModelDescriptions;
 
-namespace FlipBookLog.Areas.HelpPage {
+namespace Flip.Areas.HelpPage {
 	/// <summary>
 	/// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
 	/// </summary>

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using FlipBookLog.Areas.HelpPage.ModelDescriptions;
-using FlipBookLog.Areas.HelpPage.Models;
+using Flip.Areas.HelpPage.ModelDescriptions;
+using Flip.Areas.HelpPage.Models;
 
-namespace FlipBookLog.Areas.HelpPage {
+namespace Flip.Areas.HelpPage {
 	public static class HelpPageConfigurationExtensions {
 		private const string ApiModelPrefix = "MS_HelpPageApiModel_";
 

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	public class ParameterDescription {
 		public ParameterDescription() {
 			Annotations = new Collection<ParameterAnnotation>();

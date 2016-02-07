@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using FlipBookLog.Areas.HelpPage.ModelDescriptions;
+using Flip.Areas.HelpPage.ModelDescriptions;
 
-namespace FlipBookLog.Areas.HelpPage.Models {
+namespace Flip.Areas.HelpPage.Models {
 	/// <summary>
 	/// The model that represents an API displayed on the help page.
 	/// </summary>

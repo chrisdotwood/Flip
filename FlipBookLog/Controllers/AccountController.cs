@@ -8,9 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using FlipBookLog.Models;
+using Flip.ViewModels;
+using Flip.DomainModel;
 
-namespace FlipBookLog.Controllers {
+namespace Flip.Controllers {
 	[Authorize]
 	public class AccountController : Controller {
 		private ApplicationSignInManager _signInManager;

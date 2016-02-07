@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	public class ComplexTypeModelDescription : ModelDescription {
 		public ComplexTypeModelDescription() {
 			Properties = new Collection<ParameterDescription>();

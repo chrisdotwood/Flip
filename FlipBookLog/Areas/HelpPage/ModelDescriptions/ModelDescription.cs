@@ -1,6 +1,6 @@
 using System;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	/// <summary>
 	/// Describes a type model.
 	/// </summary>

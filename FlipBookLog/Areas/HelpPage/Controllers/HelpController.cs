@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using FlipBookLog.Areas.HelpPage.ModelDescriptions;
-using FlipBookLog.Areas.HelpPage.Models;
+using Flip.Areas.HelpPage.ModelDescriptions;
+using Flip.Areas.HelpPage.Models;
 
-namespace FlipBookLog.Areas.HelpPage.Controllers {
+namespace Flip.Areas.HelpPage.Controllers {
 	/// <summary>
 	/// The controller that will handle requests for the help page.
 	/// </summary>

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace FlipBookLog.Areas.HelpPage.ModelDescriptions {
+namespace Flip.Areas.HelpPage.ModelDescriptions {
 	public interface IModelDocumentationProvider {
 		string GetDocumentation(MemberInfo member);
 

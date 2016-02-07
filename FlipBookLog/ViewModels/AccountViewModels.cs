@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace FlipBookLog.ViewModels {
+namespace Flip.ViewModels {
 	// Models returned by AccountController actions.
 	public class ExternalLoginConfirmationViewModel {
 		[Required]

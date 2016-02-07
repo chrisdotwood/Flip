@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace FlipBookLog.Areas.HelpPage {
+namespace Flip.Areas.HelpPage {
 	public class HelpPageAreaRegistration : AreaRegistration {
 		public override string AreaName {
 			get {

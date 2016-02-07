@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using FlipBookLog.Models;
+using Flip.ViewModels;
 
-namespace FlipBookLog.Controllers {
+namespace Flip.Controllers {
 	[Authorize]
 	public class MeController : ApiController {
 		private ApplicationUserManager _userManager;
