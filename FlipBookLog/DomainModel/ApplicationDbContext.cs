@@ -11,19 +11,22 @@ namespace Flip.DomainModel {
 			: base("DefaultConnection", throwIfV1Schema: false) {
 		}
 
+		public static ApplicationDbContext Create() {
+			return new ApplicationDbContext();
+		}
+
 		protected override void OnModelCreating(DbModelBuilder modelBuilder) {
-			// We need to call the base method to configure the Asp.net authentication
+			// We need to call the base method to configure the Asp.net authentication related schema
 			base.OnModelCreating(modelBuilder);
 
 			modelBuilder.Entity<Book>()
 				.HasKey(s => s.Id);
 
 			modelBuilder.Entity<ReadingLog>()
-				.HasKey(s => s.Id);
-		}
-
-		public static ApplicationDbContext Create() {
-			return new ApplicationDbContext();
+				.HasKey(s => s.Id)
+				.HasMany(s => s.Books)
+				.WithOptional()
+				.WillCascadeOnDelete(true);
 		}
 
 		public DbSet<Book> Books { get; set; }
