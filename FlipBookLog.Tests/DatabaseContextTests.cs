@@ -45,5 +45,10 @@ namespace Flip.Tests {
 			Assert.Equal(readingLogCount - 1, _databaseFixture.Context.ReadingLogs.Count());
 			Assert.True(_databaseFixture.Context.Books.Count() < bookCount);
 		}
+
+		[Fact]
+		public void CanDetermineReadingLogFromBook() {
+			Assert.NotNull(_databaseFixture.Context.Books.First().ReadingLog);
+		}
 	}
 }

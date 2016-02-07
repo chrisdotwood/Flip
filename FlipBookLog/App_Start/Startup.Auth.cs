@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Flip.Providers;
 using Flip.DomainModel;
+using Flip.Repository;
 
 namespace Flip {
 	public partial class Startup {

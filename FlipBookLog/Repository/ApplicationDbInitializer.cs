@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Flip.DomainModel;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Flip.DomainModel {
+namespace Flip.Repository {
 	public class ApplicationDbInitializer : DropCreateDatabaseAlways<ApplicationDbContext> {
 		protected override void Seed(ApplicationDbContext context) {
 			// Create some test users

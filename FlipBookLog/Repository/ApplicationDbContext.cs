@@ -1,17 +1,18 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Flip.DomainModel;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Flip.DomainModel {
+namespace Flip.Repository {
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser> {
 		public ApplicationDbContext()
 			: base("TestConnection", throwIfV1Schema: false) {
 		}
 
-		public ApplicationDbContext(string nameOrConnectionString) 
+		public ApplicationDbContext(string nameOrConnectionString)
 			: base(nameOrConnectionString, throwIfV1Schema: false) {
 		}
 
@@ -29,7 +30,7 @@ namespace Flip.DomainModel {
 			modelBuilder.Entity<ReadingLog>()
 				.HasKey(s => s.Id)
 				.HasMany(s => s.Books)
-				.WithOptional()
+				.WithOptional(s => s.ReadingLog)
 				.WillCascadeOnDelete(true);
 		}
 

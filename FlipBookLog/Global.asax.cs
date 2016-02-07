@@ -9,13 +9,11 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System;
 using Flip.Controllers;
+using Flip.Repository;
 
 namespace Flip {
 	public class MvcApplication : HttpApplication {
 		protected void Application_Start() {
-
-			
-
 			Database.SetInitializer(new ApplicationDbInitializer());
 
 			AreaRegistration.RegisterAllAreas();
@@ -32,6 +30,7 @@ namespace Flip {
 
 	public class FlipNinjectModule : NinjectModule {
 		public override void Load() {
+			// TODO Bind implementations
 		}
 	}
 }

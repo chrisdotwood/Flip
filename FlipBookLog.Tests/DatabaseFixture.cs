@@ -1,4 +1,5 @@
 ﻿using Flip.DomainModel;
+using Flip.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

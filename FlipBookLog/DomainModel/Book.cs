@@ -16,5 +16,7 @@ namespace Flip.DomainModel {
 		public virtual BookStatus Status { get; set; }
 
 		public virtual BookMedia? Media { get; set; }
+
+		public virtual ReadingLog ReadingLog { get; set; }
 	}
 }
