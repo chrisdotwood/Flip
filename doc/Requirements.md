@@ -1,6 +1,7 @@
 # Reading Log Web App - Flip
 ### Front End
 - Web
+  - User registration (OWIN?)
 - Android App
 - Don't preclude others later
 
