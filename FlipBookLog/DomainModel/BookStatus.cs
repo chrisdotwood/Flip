@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 
 namespace Flip.DomainModel {
+	/// <summary>
+	/// A representation of what we are recording about the book
+	/// </summary>
 	public enum BookStatus : byte {
 		/// <summary>
 		/// The book has been read to the end

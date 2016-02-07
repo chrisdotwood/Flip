@@ -217,6 +217,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
+    <Compile Include="DomainModel\ApplicationDbContext.cs" />
+    <Compile Include="DomainModel\ApplicationDbInitializer.cs" />
     <Compile Include="DomainModel\Book.cs" />
     <Compile Include="DomainModel\BookMedia.cs" />
     <Compile Include="DomainModel\BookStatus.cs" />
@@ -225,7 +227,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AccountViewModels.cs" />
-    <Compile Include="DomainModel\IdentityModels.cs" />
+    <Compile Include="DomainModel\ApplicationUser.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\MeViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -327,7 +329,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <PropertyGroup>
