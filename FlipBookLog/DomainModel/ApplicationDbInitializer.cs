@@ -13,20 +13,15 @@ namespace Flip.DomainModel {
 
 			// Create them via the user manager rather than adding them directly to handle
 			// the security stamp and hashing
-			var manager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+			var hasher = new PasswordHasher();
 
 			var user1 = new ApplicationUser {
 				UserName = "test1@user.com",
-				Email = "test1@user.com"
+				Email = "test1@user.com",
+				PasswordHash = hasher.HashPassword("Password@123")
 			};
 
-			var user2 = new ApplicationUser {
-				UserName = "test2@user.com",
-				Email = "test2@user.com"
-			};
-
-			manager.Create(user1, "Password@123");
-			manager.Create(user2, "Password@345");
+			context.Users.Add(user1);
 
 			// Create a reading log for user1
 
@@ -61,6 +56,8 @@ namespace Flip.DomainModel {
 			};
 
 			context.ReadingLogs.Add(user1Log);
+
+			context.SaveChanges();
 		}
 	}
 }
