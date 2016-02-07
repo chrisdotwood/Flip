@@ -5,9 +5,10 @@
 - Android App
 - Don't preclude others later
 
-### Use Cases
+### Functionality
 #### Recording a book that has been read
 - Title
+- Record date started?
 - Date completed
 - Status (finished/abandoned)
 - Media (eBook/paper/audio)
