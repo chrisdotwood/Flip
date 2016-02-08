@@ -14,7 +14,7 @@ namespace Flip.Tests {
 		public DatabaseFixture() {
 			_context = new ApplicationDbContext();
 
-			Database.SetInitializer(new ApplicationDbInitializer());
+			Database.SetInitializer(new TestDbInitializer());
 		}
 
 		public ApplicationDbContext Context {

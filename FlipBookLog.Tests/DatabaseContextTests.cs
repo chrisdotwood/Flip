@@ -29,7 +29,7 @@ namespace Flip.Tests {
 			int readingLogCount = _databaseFixture.Context.ReadingLogs.Count();
 			int bookCount = _databaseFixture.Context.Books.Count();
 
-            Assert.True(readingLogCount > 0, "No reading logs in database");
+			Assert.True(readingLogCount > 0, "No reading logs in database");
 			Assert.True(bookCount > 0, "No books in database");
 
 			// Check that the first log actually has some books associated with it

@@ -11,8 +11,8 @@ namespace Flip.Repository {
 		private readonly ApplicationUser _user;
 
 		public BookRepository(ApplicationDbContext context, ApplicationUser user) {
+			if (context == null) throw new ArgumentException(nameof(context));
 			if (user == null) throw new ArgumentException(nameof(user));
-			if (context == null) throw new ArgumentException(nameof(user));
 
 			_context = context;
 			_user = user;

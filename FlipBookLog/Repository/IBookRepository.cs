@@ -9,7 +9,6 @@ namespace Flip.Repository {
 		/// <summary>
 		/// Get all of the books that are associated with the current user
 		/// </summary>
-		/// <returns></returns>
 		IEnumerable<Book> GetAllBooks();
 	}
 }
