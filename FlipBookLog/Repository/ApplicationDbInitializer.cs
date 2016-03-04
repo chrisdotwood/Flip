@@ -19,6 +19,7 @@ namespace Flip.Repository {
 			var user1 = new ApplicationUser {
 				UserName = "test1@user.com",
 				Email = "test1@user.com",
+				Hometown = "Oz",
 				SecurityStamp = Guid.NewGuid().ToString(),
 				PasswordHash = hasher.HashPassword("Password@123")
 			};

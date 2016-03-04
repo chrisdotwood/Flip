@@ -21,7 +21,7 @@ namespace Flip {
 			OAuthOptions = new OAuthAuthorizationServerOptions {
 				TokenEndpointPath = new PathString("/Token"),
 				AuthorizeEndpointPath = new PathString("/Account/Authorize"),
-				Provider = new ApplicationOAuthProvider(PublicClientId),
+				Provider = new ApplicationOAuthProvider(),
 				AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
 				AllowInsecureHttp = true
 			};
