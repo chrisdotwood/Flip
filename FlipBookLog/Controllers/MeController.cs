@@ -13,6 +13,7 @@ using Owin;
 using Flip.ViewModels;
 
 namespace Flip.Controllers {
+	[Authorize]
 	public class MeController : ApiController {
 		private ApplicationUserManager _userManager;
 
@@ -34,8 +35,9 @@ namespace Flip.Controllers {
 
 		// GET api/Me
 		public GetViewModel Get() {
-			var user = UserManager.FindById(User.Identity.GetUserId());
-			return new GetViewModel() { Hometown = user.Hometown };
+		
+
+			return new GetViewModel() { Hometown = "Test" };
 		}
 	}
 }
