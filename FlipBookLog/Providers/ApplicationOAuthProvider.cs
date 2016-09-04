@@ -43,7 +43,7 @@ namespace Flip.Providers {
 
 			context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-			// TODO Check username and password against database. Investigate possible async repo
+			// TODO Check username and password against database. Investigate possible async repo. Step 6 from http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/
 
 			//using (AuthRepository _repo = new AuthRepository()) {
 			//	IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
@@ -59,7 +59,7 @@ namespace Flip.Providers {
 			identity.AddClaim(new Claim("role", "user"));
 
 			context.Validated(identity);
-
+			
 			return Task.FromResult<object>(null);
 		}
 	}
