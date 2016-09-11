@@ -1,38 +1,33 @@
 /// <reference path="../angular.js"/>
 
-angular.module("flipApp", ["ngRoute"])
-    .controller("flipController", ['$scope', '$http', '$httpParamSerializer', function ($scope, $http, $httpParamSerializer) {
-        $scope.title = "Flip - Reading Log";
-        $scope.filter;
+var app = angular.module("flipApp", ["ngRoute"]);
 
+app.controller("flipController", ['$scope', '$http', '$httpParamSerializer', 'authenticationService', function ($scope, $http, $httpParamSerializer, authenticationService) {
+    $scope.title = "Flip - Reading Log";
+    $scope.filter;
 
-        var tokenRequest = {
-            'grant_type': 'password',
-            'username': 'Taiseer',
-            'password': 'SuperPass2342342342342'
-        };
-
-        var bearerToken = "";
-
-        $http.post("/token", $httpParamSerializer(tokenRequest), {
-                headers: { "content-type": "application/x-www-form-urlencoded" }
-            }
-        ).success(function(data) {
-            bearerToken = data.access_token;
-
+    // TODO Authenticate correctly
+    authenticationService.authenticate("anyUsernameWillDo", "SoTooThePassword")
+        .then(function () {
             $http.get("/api/Orders", {
                 headers: {
-                    "content-type": "application/json",
-                    "authorization": "bearer " + bearerToken
+                    "content-type": "application/json"
                 }
             }).success(function (data) {
                 $scope.orders = data;
             }).error(function (data) {
                 alert("Error getting orders: " + data);
             });
-
-
-        }).error(function(data) {
-            alert("error");
         });
-    }]);
+
+}]);
+
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authenticationInterceptorService');
+});
+
+var serviceBase = 'http://localhost:53477';
+app.constant('ngAuthSettings', {
+    apiServiceBaseUri: serviceBase,
+    clientId: 'ngAuthApp'
+});
