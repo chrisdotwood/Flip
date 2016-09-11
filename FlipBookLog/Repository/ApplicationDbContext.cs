@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,8 @@ namespace Flip.Repository {
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser> {
 		public ApplicationDbContext()
 			: base("TestConnection", throwIfV1Schema: false) {
+
+			Database.Log = message => Debug.WriteLine(message);
 		}
 
 		public ApplicationDbContext(string nameOrConnectionString)

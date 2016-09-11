@@ -51,6 +51,8 @@ namespace Flip {
 				RequireUppercase = true,
 			};
 
+			manager.PasswordHasher = new PasswordHasher();
+
 			// Configure user lockout defaults
 			manager.UserLockoutEnabledByDefault = true;
 			manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);

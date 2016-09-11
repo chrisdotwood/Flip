@@ -9,17 +9,17 @@ using System.Web;
 
 namespace Flip.Repository {
 	public class AuthRepository : IDisposable {
-		private AuthDbContext _ctx;
+		private ApplicationDbContext _ctx;
 
-		private UserManager<IdentityUser> _userManager;
+		private UserManager<ApplicationUser> _userManager;
 
 		public AuthRepository() {
-			_ctx = new AuthDbContext();
-			_userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>(_ctx));
+			_ctx = new ApplicationDbContext();
+			_userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_ctx));
 		}
 
 		public async Task<IdentityResult> RegisterUser(FlipUser userModel) {
-			IdentityUser user = new IdentityUser {
+			ApplicationUser user = new ApplicationUser {
 				UserName = userModel.UserName
 			};
 
@@ -28,8 +28,8 @@ namespace Flip.Repository {
 			return result;
 		}
 
-		public async Task<IdentityUser> FindUser(string userName, string password) {
-			IdentityUser user = await _userManager.FindAsync(userName, password);
+		public async Task<ApplicationUser> FindUser(string userName, string password) {
+			ApplicationUser user = await _userManager.FindAsync(userName, password);
 
 			return user;
 		}
@@ -37,7 +37,6 @@ namespace Flip.Repository {
 		public void Dispose() {
 			_ctx.Dispose();
 			_userManager.Dispose();
-
 		}
 	}
 }

@@ -241,7 +241,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Repository\AuthDbContext.cs" />
     <Compile Include="Repository\AuthRepository.cs" />
     <Compile Include="Repository\BookRepository.cs" />
     <Compile Include="Repository\IBookRepository.cs" />

@@ -7,7 +7,7 @@ app.controller("flipController", ['$scope', '$http', '$httpParamSerializer', 'au
     $scope.filter;
 
     // TODO Authenticate correctly
-    authenticationService.authenticate("anyUsernameWillDo", "SoTooThePassword")
+    authenticationService.authenticate("test1@user.com", "Password@123")
         .then(function () {
             $http.get("/api/Orders", {
                 headers: {

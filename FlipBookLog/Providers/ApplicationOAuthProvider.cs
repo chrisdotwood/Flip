@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Owin.Security.OAuth;
 using Flip.Repository;
 using System.Security.Claims;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Flip.Providers {
 	public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider {
@@ -39,20 +40,20 @@ namespace Flip.Providers {
 			return Task.FromResult<object>(null);
 		}
 
-		public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
+		public async override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context) {
 
 			context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
 			// TODO Check username and password against database. Investigate possible async repo. Step 6 from http://bitoftech.net/2014/06/01/token-based-authentication-asp-net-web-api-2-owin-asp-net-identity/
 
-			//using (AuthRepository _repo = new AuthRepository()) {
-			//	IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
+			using (AuthRepository _repo = new AuthRepository()) {
+				IdentityUser user = await _repo.FindUser(context.UserName, context.Password);
 
-			//	if (user == null) {
-			//		context.SetError("invalid_grant", "The user name or password is incorrect.");
-			//		return;
-			//	}
-			//}
+				if (user == null) {
+					context.SetError("invalid_grant", "The user name or password is incorrect.");
+					return;
+				}
+			}
 
 			var identity = new ClaimsIdentity(context.Options.AuthenticationType);
 			identity.AddClaim(new Claim("sub", context.UserName));
@@ -60,7 +61,7 @@ namespace Flip.Providers {
 
 			context.Validated(identity);
 			
-			return Task.FromResult<object>(null);
+			return;
 		}
 	}
 }
