@@ -2,7 +2,10 @@
     .controller("loginController", ["$scope", "$window", "$location", "authenticationService", function ($scope, $window, $location, authenticationService) {
         $scope.password = "";
         $scope.email = "";
-        $scope.redirect = $location.search().redirect;
+
+        $scope.double = function (x) {
+            return 2 * x;
+        };
 
         $scope.submit = function () {
             authenticationService.authenticate($scope.email, $scope.password)

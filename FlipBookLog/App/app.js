@@ -1,5 +1,3 @@
-/// <reference path="../angular.js"/>
-
 var app = angular.module("flipApp", ["ngRoute"]);
 
 app.controller("flipController", ['$scope', '$http', '$httpParamSerializer', 'authenticationService', function ($scope, $http, $httpParamSerializer, authenticationService) {
