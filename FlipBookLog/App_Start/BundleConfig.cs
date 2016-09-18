@@ -17,9 +17,10 @@ namespace Flip {
 			bundles.Add(new ScriptBundle("~/bundles/app").Include(
 				"~/Scripts/angular.js",
 				"~/Scripts/angular-route*",
-				"~/Scripts/app/app.js",
-				"~/Scripts/app/services/authenticationInterceptorService.js",
-				"~/Scripts/app/services/authenticationService.js"
+				"~/App/app.js",
+				"~/App/login.js",
+				"~/App/Services/authenticationInterceptorService.js",
+				"~/App/Services/authenticationService.js"
 			));
 
 			// Use the development version of Modernizr to develop with and learn from. Then, when you're

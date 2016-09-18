@@ -229,6 +229,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ControllerFactory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="DomainModel\FlipUser.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\login.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap.css" />
@@ -267,9 +269,9 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\services\authenticationService.js" />
-    <Content Include="Scripts\app\services\authenticationInterceptorService.js" />
+    <Content Include="App\app.js" />
+    <Content Include="App\Services\authenticationService.js" />
+    <Content Include="App\Services\authenticationInterceptorService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -300,10 +302,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Scripts\app\XXapp.datamodel.js" />
-    <Content Include="Scripts\app\XXapp.viewmodel.js" />
-    <Content Include="Scripts\app\XXcommon.js" />
-    <Content Include="Scripts\app\XXhome.viewmodel.js" />
+    <Content Include="App\XXapp.datamodel.js" />
+    <Content Include="App\XXapp.viewmodel.js" />
+    <Content Include="App\XXcommon.js" />
+    <Content Include="App\XXhome.viewmodel.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\_Home.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -329,6 +331,8 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Login\_Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
