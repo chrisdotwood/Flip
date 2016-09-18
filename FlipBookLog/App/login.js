@@ -3,14 +3,10 @@
         $scope.password = "";
         $scope.email = "";
 
-        $scope.double = function (x) {
-            return 2 * x;
-        };
-
         $scope.submit = function () {
             authenticationService.authenticate($scope.email, $scope.password)
                 .then(function success() {
-                    // TODO redirect to url param if present
+                    // redirect to url 'redirect' param if present
                     if ($location.search().redirect != undefined) {
                         $window.location.href = $location.search().redirect;
                     } else {
@@ -20,5 +16,4 @@
                     alert("error");
                 });
         };
-
     }]);

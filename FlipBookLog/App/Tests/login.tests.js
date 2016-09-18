@@ -1,4 +1,4 @@
-﻿describe('PasswordController', function () {
+﻿describe('Login Controller', function () {
     beforeEach(module('flipApp'));
 
     var $controller;
@@ -32,13 +32,12 @@
         _authenticationService = authenticationService;
         spyOn(_authenticationService, "authenticate").and.returnValue(deferred.promise);
 
+        $controller('loginController', { $scope: $scope, $window: $window, $location: $location, authenticationService: _authenticationService });
 
     }));
 
-    it("Login should call redirect to /Home if there is no other parameter specified", function () {
+    it("submit should call redirect to /Home if there is no other parameter specified", function () {
         $location.path = "";
-
-        $controller('loginController', { $scope: $scope, $window: $window, $location: $location, authenticationService: _authenticationService });
 
         // Setup the data that the controller will return
         deferred.resolve({});
@@ -51,10 +50,8 @@
         expect($window.location.href).toBe("/Home");
     });
 
-    it("Login should call redirect to location supplied if there is a redirect parameter", function () {
+    it("submit should call redirect to location supplied if there is a redirect parameter", function () {
         spyOn($location, "search").and.returnValue({ redirect: "/Success" });
-
-        $controller('loginController', { $scope: $scope, $window: $window, $location: $location, authenticationService: _authenticationService });
 
         // Setup the data that the controller will return
         deferred.resolve({});
