@@ -2,31 +2,69 @@
     beforeEach(module('flipApp'));
 
     var $controller;
+    var $scope;
+    var $q;
+    var deferred;
+    var $window;
+    var $location;
+    var _authenticationService;
 
-    beforeEach(inject(function (_$controller_) {
+    beforeEach(inject(function (_$controller_, _$rootScope_, _$q_, _$location_, authenticationService) {
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;
+        $q = _$q_;
+        $location = _$location_;
+
+        deferred = $q.defer();
+
+        $window = {
+            location: {
+                href: ""
+            }
+        };
+
+        $scope = _$rootScope_.$new();
+
+        // Setup the fields on the form
+        $scope.email = "test.user@domain.com";
+        $scope.password = "Password@123";
+
+        _authenticationService = authenticationService;
+        spyOn(_authenticationService, "authenticate").and.returnValue(deferred.promise);
+
+
     }));
 
-    describe("Double function", function () {
-        it("doubles a parameter", function () {
+    it("Login should call redirect to /Home if there is no other parameter specified", function () {
+        $location.path = "";
 
-            var $scope = {};
-            var controller = $controller('loginController', { $scope: $scope, $window: {}, $location: {}, authenticationService: {} });
+        $controller('loginController', { $scope: $scope, $window: $window, $location: $location, authenticationService: _authenticationService });
 
-            expect($scope.double(2)).toEqual(4);
-            expect($scope.double(-4)).toEqual(-8);
-            expect($scope.double(0)).toEqual(0);
-        });
+        // Setup the data that the controller will return
+        deferred.resolve({});
+
+        // Submit the form
+        $scope.submit();
+
+        $scope.$apply();
+
+        expect($window.location.href).toBe("/Home");
     });
 
-    describe('$scope.grade', function () {
-        it('sets the strength to "strong" if the password length is >8 chars', function () {
-            var $scope = {};
-            var controller = $controller('loginController', { $scope: $scope });
-            $scope.password = 'longerthaneightchars';
-            $scope.grade();
-            expect($scope.strength).toEqual('strong');
-        });
+    it("Login should call redirect to location supplied if there is a redirect parameter", function () {
+        spyOn($location, "search").and.returnValue({ redirect: "/Success" });
+
+        $controller('loginController', { $scope: $scope, $window: $window, $location: $location, authenticationService: _authenticationService });
+
+        // Setup the data that the controller will return
+        deferred.resolve({});
+
+        // Submit the form
+        $scope.submit();
+
+        $scope.$apply();
+
+        expect($window.location.href).toBe("/Success");
     });
+
 });
