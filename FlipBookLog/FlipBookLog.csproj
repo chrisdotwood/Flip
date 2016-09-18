@@ -310,10 +310,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="App\XXapp.datamodel.js" />
-    <Content Include="App\XXapp.viewmodel.js" />
-    <Content Include="App\XXcommon.js" />
-    <Content Include="App\XXhome.viewmodel.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\_Home.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
