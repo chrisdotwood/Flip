@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module("flipApp").factory('authenticationInterceptorService', ['$q', '$injector', '$location', function ($q, $injector, $location) {
+angular.module("flipApp").factory('authenticationInterceptorService', ['$q', '$injector', '$window', "$location", function ($q, $injector, $window, $location) {
 
     var authInterceptorServiceFactory = {};
 
@@ -29,8 +29,12 @@ angular.module("flipApp").factory('authenticationInterceptorService', ['$q', '$i
             //    }
             //}
             authService.logOut();
-            $location.path('/login');
+
+            rejection.dontReport = true;
+
+            $window.location.href = "/Login?redirect=" + $location.url();
         }
+        
         return $q.reject(rejection);
     }
 

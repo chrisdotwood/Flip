@@ -18,7 +18,8 @@ namespace Flip {
 				"~/Scripts/angular.js",
 				"~/Scripts/angular-route*",
 				"~/App/app.js",
-				"~/App/login.js",
+				"~/App/loginController.js",
+				"~/App/reviewController.js",
 				"~/App/Services/authenticationInterceptorService.js",
 				"~/App/Services/authenticationService.js"
 			));

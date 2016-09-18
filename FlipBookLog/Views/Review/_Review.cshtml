@@ -1,0 +1,18 @@
+﻿<div class="row" ng-app="flipApp" ng-controller="reviewController">
+    <h1>Review</h1>
+    <h1>{{title}}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in orders">
+                <td>{{order.customerName}}</td>
+                <td>{{order.shipperCity}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

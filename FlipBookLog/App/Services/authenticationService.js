@@ -1,17 +1,16 @@
 /// <reference path="../../angular.js"/>
 
 angular.module("flipApp")
-    .service("authenticationService", ['$http', '$httpParamSerializer', '$q', function ($http, $httpParamSerializer, $q) {
-        var _isAuthenticated = false;
-        var _token = "";
-
+    .factory("authenticationService", ['$http', '$httpParamSerializer', '$q', function ($http, $httpParamSerializer, $q) {
         return {
             isAuthenticated: function () {
-                return _isAuthenticated;
+                if (localStorage["isAuthenticated"] == undefined) {
+                    return false;
+                } else return localStorage["isAuthenticated"];
             },
 
-            getToken: function() {
-                return _token;
+            getToken: function () {
+                return localStorage["token"];
             },
 
             authenticate: function (username, password) {
@@ -26,9 +25,9 @@ angular.module("flipApp")
                 $http.post("/token", $httpParamSerializer(tokenRequest), {
                     headers: { "content-type": "application/x-www-form-urlencoded" }
                 }).then(function success(response) {
-                    _token = response.data.access_token;
+                    localStorage["token"] = response.data.access_token;
 
-                    _isAuthenticated = true;
+                    localStorage["isAuthenticated"] = true;
 
                     defer.resolve();
                 }, function error(message) {
@@ -39,8 +38,8 @@ angular.module("flipApp")
             },
 
             logOut: function () {
-                _isAuthenticated = false;
-                _token = "";
+                localStorage["isAuthenticated"] = false;
+                localStorage["token"] = "";
             }
         }
     }]);

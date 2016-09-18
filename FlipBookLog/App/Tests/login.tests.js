@@ -47,7 +47,7 @@
 
         $scope.$apply();
 
-        expect($window.location.href).toBe("/Home");
+        expect($window.location.href).toBe("/Review");
     });
 
     it("submit should call redirect to location supplied if there is a redirect parameter", function () {

@@ -10,7 +10,7 @@
                     if ($location.search().redirect != undefined) {
                         $window.location.href = $location.search().redirect;
                     } else {
-                        $window.location.href = "/Home";
+                        $window.location.href = "/Review";
                     }
                 }, function error() {
                     alert("error");
