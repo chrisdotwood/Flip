@@ -22,8 +22,9 @@ app.controller("flipController", ['$scope', '$http', '$httpParamSerializer', 'au
 
 }]);
 
-app.config(function ($httpProvider) {
+app.config(function ($httpProvider, $locationProvider) {
     $httpProvider.interceptors.push('authenticationInterceptorService');
+    $locationProvider.html5Mode({ enabled: true, requireBase: false });
 });
 
 var serviceBase = 'http://localhost:53477';
